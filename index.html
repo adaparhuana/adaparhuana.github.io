@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X_UA_Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4d7ee40719.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="assets/log.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Inicio</a></li>
+                <li><a href="#about">Acerca</a></li>
+                <li><a href="#portfolio">Portafolio</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <i class="fa-solid fa-xmark close-button" onclick="closemenu()"></i>
+            </ul>
+            <img src="assets/moon.png" id="icon">
+            <i class="fa-solid fa-bars fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Hola, mi nombre es</p>
+            <h1><span>Ada Parhuana.</span><br>Diseño, proceso y analizo datos.</h1>
+        </div>
+    </div>
+</div> 
+<!-- ----about--- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="assets/user.png">
+            </div>      
+            <div class="about-col-2">
+                <h1 class="sub-title">Acerca de mí</h1>
+                <p>Soy científica de datos con más de 2 años de experiencia en el área de contabilidad y finanzas. Mi pasión por la tecnología me llevó al mundo de los datos. En la actualidad, trabajo en proyectos de Machine Learning y Data Engineering, donde aplico mis conocimientos y aprendo de cada desafío.</p>
+                
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experiencia</p>
+                    <p class="tab-links" onclick="opentab('education')">Educación</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <div class="progress">
+                        <p>
+                            <b>Análisis de Datos</b>
+                            <b>90%</b>
+                        </p>
+                        <progress value="90" min="0" max="100"></progress>
+                    </div>
+                    <div class="progress">
+                        <p>
+                            <b>Machine Learning aplicado a negocios</i></b>
+                            <b>60%</b>
+                        </p>
+                        <progress value="60" min="0" max="100"></progress>
+                    </div>
+                    <div class="progress">
+                        <p>
+                            <b>Diseño de gestión y procesamiento de datos</b>
+                            <b>60%</b>
+                        </p>
+                        <progress value="60" min="0" max="100"></progress>
+                    </div>
+                    <div class="progress">
+                        <p>
+                            <b>Web Scraping con Python</b>
+                            <b>45%</b>
+                        </p>
+                        <progress value="35" min="0" max="100"></progress>
+                    </div>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><b><span>2022 - Actual</span></b> <br> Data Scientist<br></li>
+                        <li><b><span>2019 - 2022</span></b> <br> Practicante de Contabilidad y Finanzas<br></li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><b><span>2022 - 2023</span></b> <br> Data Scientist en Henry Bootcamp<br></li>
+                        <li><b><span>2015 - 2021</span></b> <br> Egresada de Contabilidad en Universidad Nacional del Callao <br></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----servicios---- -->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink  of tablinks){
+            tablink.classList.remove("active-link");  
+        }
+        for(tabcontent  of tabcontents){
+            tabcontent.classList.remove("active-tab");  
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<!-- ----portfolio---- -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Mi Portafolio</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="assets/work-1.png">
+                <div class="layer">
+                    <h3><strong>Proyecto 1: Sistema de recomendación de restaurante</strong></h3>
+                    <p class="descripcion"><strong><span class="highlighted-text">Descripción:</span></strong> Un inversionista solicita un estudio para comprender la opinión de los usuarios, predecir tendencias de crecimiento de mercado y ubicaciones estratégicas.<br></p>
+                    <p class="objetivo"><strong><span class="highlighted-text">Objetivo:</span></strong> Desarrollar un análisis y sistema de recomendación basado en plataformas de Yelp y Google Maps.</p>
+                    <a href="https://github.com/adaparhuana/PF-YelpGoogleMaps"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="assets/work-2.jpg">
+                <div class="layer">
+                    <h3><strong>Proyecto 2: Stock Market</strong></h3>
+                    <p class="descripcion"><strong><span class="highlighted-text">Descripción:</span></strong> Una empresa busca invertir en el mercado bursátil. Solicita análisis historico de los últimos 23 años y recomendaciones de inversión del S&P 500 para medir el éxito de sus inversiones.<br></p>
+                    <p class="objetivo"><strong><span class="highlighted-text">Objetivo:</span></strong> Realizar recomendaciones de inversión basadas en retorno, riesgo y KPIs.</p>
+                    <a href="https://github.com/adaparhuana/StockMarket"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="assets/work-3.png">
+                <div class="layer">
+                    <h3><strong>Proyecto 3: Sistema de Recomendación de Películas</strong></h3>
+                    <p class="descripcion"><strong><span class="highlighted-text">Descripción:</span></strong>Una startup que proporciona servicios de agregación de plataformas de streaming solicita un sistema de recomendación de películas personalizadas para sus clientes.<br></p>
+                    <p class="objetivo"><strong><span class="highlighted-text">Objetivo:</span></strong>Desarrollar una aplicación que recomienda películas a los usuarios según sus gustos y preferencias.</p>
+                    <a href="https://github.com/adaparhuana/MovieRecommendationSystem"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="assets/work-4.jpg">
+                <div class="layer">
+                    <h3><strong>Online Shopping App</strong></h3>
+                    <p class="descripcion"><strong><span class="highlighted-text">Descripción:</span></strong> The app connects you yo the talented people around the world.Download it from play store.<br></p>
+                    <p class="objetivo"><strong><span class="highlighted-text">Objetivo:</span></strong> Recopilar, analizar y procesar los datos con el fin de desarrollar un Sistema de Recomendación para proporcionar a los usuarios recomendaciones personalizadas de películas.</p>
+                    <a href="https://github.com/adaparhuana"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">Ver más</a>
+    </div>
+</div>
+<!-- ----contact---- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contáctame</h1>
+                <p><i class="fa-solid fa-location-dot"></i> Lima, Perú</p>
+                <p><i class="fa-solid fa-envelope"></i> adaparhuanaa@gmail.com</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/adaparhuana"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/adaparhuana"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://twitter.com/AdaParhuana"><i class="fab fa-twitter-square"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Enviar</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 by Ada Parhuana | All rights reserved.</p>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+        
+    }
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwEFOS-1_JI7FthRbTBbRp8-JQ_SyZhbXB_oNZzQHq_stLv4RlV-r4fofWaA2z618o/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+<script>
+    
+    var icon = document.getElementById("icon");
+
+    icon.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+        if ( document.body.classList.contains("dark-theme")){
+            icon.src = "assets/sun.png";
+        }else{
+            icon.src = "assets/moon.png";
+        }
+    }
+
+</script>
+
+</body>
+</html>
